@@ -2,7 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#ff6b6b">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>Anushka's Birthday Surprise!</title>
     <style>
         * {
@@ -12,12 +15,15 @@
         }
 
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
             overflow-x: hidden;
             background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #feca57);
             background-size: 300% 300%;
             animation: gradientShift 8s ease infinite;
             min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            touch-action: manipulation;
         }
 
         @keyframes gradientShift {
@@ -842,31 +848,227 @@
             }
         }
 
-        /* RESPONSIVE DESIGN */
+        /* RESPONSIVE DESIGN - MOBILE FIRST */
         @media (max-width: 768px) {
             .welcome-title {
-                font-size: 2.5rem;
+                font-size: 2rem;
+                padding: 0 10px;
             }
 
             .birthday-message {
-                font-size: 3rem;
+                font-size: 2.5rem;
+                padding: 0 10px;
+            }
+
+            .navbar {
+                padding: 10px 0;
             }
 
             .nav-content {
-                gap: 10px;
+                gap: 8px;
+                padding: 0 10px;
             }
 
             .nav-btn {
-                padding: 8px 15px;
-                font-size: 0.9rem;
+                padding: 8px 12px;
+                font-size: 0.8rem;
+                letter-spacing: 0.5px;
             }
 
             .about-title, .game-title, .party-title {
-                font-size: 2rem;
+                font-size: 1.8rem;
+                padding: 0 10px;
             }
 
             .about-text, .quiz-question, .party-details {
-                font-size: 1.2rem;
+                font-size: 1rem;
+                padding: 0 10px;
+            }
+
+            .about-card, .game-container, .party-container {
+                margin: 10px;
+                padding: 20px;
+                border-radius: 15px;
+            }
+
+            .memory-game {
+                gap: 15px;
+                max-width: 280px;
+                margin: 0 auto 20px;
+            }
+
+            .memory-card {
+                font-size: 2.2rem;
+                border-radius: 15px;
+            }
+
+            .card-back, .card-front {
+                font-size: 2.2rem;
+                border-radius: 15px;
+            }
+
+            .game-stats {
+                gap: 10px;
+                margin-bottom: 20px;
+            }
+
+            .stat-card {
+                padding: 10px 15px;
+                min-width: 90px;
+            }
+
+            .stat-number {
+                font-size: 1.5rem;
+            }
+
+            .stat-label {
+                font-size: 0.8rem;
+            }
+
+            .game-controls {
+                gap: 15px;
+                margin-bottom: 20px;
+            }
+
+            .control-btn {
+                padding: 12px 20px;
+                font-size: 0.9rem;
+                letter-spacing: 0.5px;
+            }
+
+            /* MOBILE EPIC CELEBRATION */
+            .mega-text {
+                font-size: clamp(2rem, 12vw, 4rem);
+                margin: 10px;
+                line-height: 1.1;
+                padding: 0 10px;
+            }
+
+            .celebration-emoji {
+                font-size: clamp(3rem, 15vw, 6rem);
+                margin: 15px;
+            }
+
+            .celebration-message {
+                font-size: clamp(1rem, 4vw, 1.8rem);
+                margin: 15px;
+                padding: 0 15px;
+                line-height: 1.3;
+            }
+
+            .close-celebration {
+                top: 20px;
+                right: 20px;
+                font-size: 1.5rem;
+                width: 50px;
+                height: 50px;
+            }
+
+            .pulse-ring {
+                width: 100px;
+                height: 100px;
+            }
+
+            @keyframes pulseRing {
+                0% {
+                    width: 30px;
+                    height: 30px;
+                    opacity: 1;
+                }
+                100% {
+                    width: 400px;
+                    height: 400px;
+                    opacity: 0;
+                }
+            }
+
+            .celebration-balloon {
+                width: 50px;
+                height: 65px;
+            }
+
+            .celebration-balloon:before {
+                width: 2px;
+                height: 50px;
+                bottom: -50px;
+            }
+        }
+
+        /* MOBILE TOUCH IMPROVEMENTS */
+        @media (max-width: 480px) {
+            .welcome-title {
+                font-size: 1.5rem;
+            }
+
+            .birthday-message {
+                font-size: 2rem;
+                margin: 15px 0;
+            }
+
+            .nav-btn {
+                padding: 6px 10px;
+                font-size: 0.7rem;
+            }
+
+            .about-title, .game-title, .party-title {
+                font-size: 1.5rem;
+            }
+
+            .memory-game {
+                max-width: 240px;
+                gap: 10px;
+            }
+
+            .memory-card {
+                font-size: 1.8rem;
+            }
+
+            .card-back, .card-front {
+                font-size: 1.8rem;
+            }
+
+            .mega-text {
+                font-size: clamp(1.5rem, 10vw, 3rem);
+                margin: 5px;
+            }
+
+            .celebration-emoji {
+                font-size: clamp(2rem, 12vw, 4rem);
+                margin: 10px;
+            }
+
+            .celebration-message {
+                font-size: clamp(0.9rem, 3.5vw, 1.5rem);
+                margin: 10px;
+                padding: 0 10px;
+            }
+        }
+
+        /* TOUCH FRIENDLY HOVER EFFECTS */
+        @media (hover: none) and (pointer: coarse) {
+            .memory-card:hover {
+                transform: none;
+                box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+            }
+
+            .memory-card:active {
+                transform: scale(0.95);
+            }
+
+            .nav-btn:hover {
+                transform: none;
+            }
+
+            .nav-btn:active {
+                transform: scale(0.95);
+            }
+
+            .control-btn:hover {
+                transform: none;
+            }
+
+            .control-btn:active {
+                transform: scale(0.95);
             }
         }
     </style>
@@ -1199,13 +1401,9 @@
             const celebration = document.getElementById('fullscreenCelebration');
             celebration.classList.add('active');
             
-            // Create fireworks
-            createFireworks();
-            
-            // Create mega confetti storm
-            createMegaConfettiStorm();
-            
-            // Create floating balloons
+            // Create mobile-optimized effects
+            createMobileFireworks();
+            createMobileOptimizedConfetti();
             createCelebrationBalloons();
             
             // Auto close after 8 seconds
@@ -1218,28 +1416,47 @@
             document.getElementById('fullscreenCelebration').classList.remove('active');
         }
 
-        // Create fireworks effect
-        function createFireworks() {
-            const fireworksContainer = document.querySelector('.fireworks');
-            
-            for (let i = 0; i < 50; i++) {
-                setTimeout(() => {
-                    const firework = document.createElement('div');
-                    firework.classList.add('firework');
-                    firework.style.left = Math.random() * 100 + '%';
-                    firework.style.top = Math.random() * 100 + '%';
-                    firework.style.backgroundColor = ['#ff6b6b', '#4ecdc4', '#45b7d1', '#feca57', '#ff9a9e'][Math.floor(Math.random() * 5)];
-                    firework.style.animationDelay = Math.random() * 2 + 's';
-                    fireworksContainer.appendChild(firework);
-                    
-                    setTimeout(() => firework.remove(), 3000);
-                }, i * 100);
-            }
+        // MOBILE-SPECIFIC TOUCH ENHANCEMENTS
+        function addMobileTouchEffects() {
+            // Prevent double-tap zoom
+            let lastTouchEnd = 0;
+            document.addEventListener('touchend', function (event) {
+                const now = (new Date()).getTime();
+                if (now - lastTouchEnd <= 300) {
+                    event.preventDefault();
+                }
+                lastTouchEnd = now;
+            }, false);
+
+            // Add vibration on touch for supported devices
+            document.addEventListener('touchstart', function(e) {
+                if ('vibrate' in navigator) {
+                    navigator.vibrate(50);
+                }
+            });
+
+            // Enhanced touch feedback for cards
+            document.addEventListener('touchstart', function(e) {
+                if (e.target.classList.contains('memory-card')) {
+                    e.target.style.transform = 'scale(0.95)';
+                }
+            });
+
+            document.addEventListener('touchend', function(e) {
+                if (e.target.classList.contains('memory-card')) {
+                    setTimeout(() => {
+                        e.target.style.transform = '';
+                    }, 150);
+                }
+            });
         }
 
-        // Create mega confetti storm
-        function createMegaConfettiStorm() {
-            for (let i = 0; i < 200; i++) {
+        // MOBILE CONFETTI OPTIMIZATION
+        function createMobileOptimizedConfetti() {
+            const isMobile = window.innerWidth <= 768;
+            const confettiCount = isMobile ? 50 : 200;
+            
+            for (let i = 0; i < confettiCount; i++) {
                 setTimeout(() => {
                     const confetti = document.createElement('div');
                     confetti.classList.add('mega-confetti');
@@ -1250,7 +1467,28 @@
                     document.getElementById('fullscreenCelebration').appendChild(confetti);
                     
                     setTimeout(() => confetti.remove(), 5000);
-                }, i * 50);
+                }, i * (isMobile ? 80 : 50));
+            }
+        }
+
+        // MOBILE FIREWORKS OPTIMIZATION  
+        function createMobileFireworks() {
+            const isMobile = window.innerWidth <= 768;
+            const fireworkCount = isMobile ? 25 : 50;
+            const fireworksContainer = document.querySelector('.fireworks');
+            
+            for (let i = 0; i < fireworkCount; i++) {
+                setTimeout(() => {
+                    const firework = document.createElement('div');
+                    firework.classList.add('firework');
+                    firework.style.left = Math.random() * 100 + '%';
+                    firework.style.top = Math.random() * 100 + '%';
+                    firework.style.backgroundColor = ['#ff6b6b', '#4ecdc4', '#45b7d1', '#feca57', '#ff9a9e'][Math.floor(Math.random() * 5)];
+                    firework.style.animationDelay = Math.random() * 2 + 's';
+                    fireworksContainer.appendChild(firework);
+                    
+                    setTimeout(() => firework.remove(), 3000);
+                }, i * (isMobile ? 150 : 100));
             }
         }
 
@@ -1340,6 +1578,9 @@
         setInterval(createSparkle, 200);
         setInterval(createConfetti, 500);
 
+        // Initialize mobile enhancements
+        addMobileTouchEffects();
+        
         // Initialize memory game on page load
         resetGame();
 
