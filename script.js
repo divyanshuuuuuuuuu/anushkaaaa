@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     otpEmail.textContent = email;
                     alert('OTP sent successfully! Please check your email.');
                 } else {
-                    alert('Failed to send OTP. Please try again.');
+                    alert(data.message || 'Failed to send OTP. Please try again.');
                 }
             })
             .catch(error => {
