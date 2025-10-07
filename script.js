@@ -112,10 +112,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     step1.style.display = 'none';
                     step2.style.display = 'block';
                     otpEmail.textContent = email;
-                    // For testing, show OTP in console
-                    if (data.testOtp) {
-                        alert(`Test OTP: ${data.testOtp} (Check console for actual OTP)`);
-                    }
+                    alert('OTP sent successfully! Please check your email.');
                 } else {
                     alert('Failed to send OTP. Please try again.');
                 }
