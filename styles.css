@@ -199,3 +199,377 @@ footer {
 #resend-otp-btn:hover {
     background: linear-gradient(45deg, #FFA500, #FF8C00);
 }
+
+/* About Section */
+.about-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+.about-text h3 {
+    color: #8B0000;
+    margin-bottom: 1rem;
+}
+
+.about-text ul {
+    list-style: none;
+    padding: 0;
+}
+
+.about-text li {
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.about-text li::before {
+    content: "✓";
+    color: #28a745;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+.about-stats {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+.stat {
+    text-align: center;
+    padding: 1rem;
+    background: linear-gradient(45deg, #FFD700, #FFA500);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.stat h4 {
+    margin: 0;
+    font-size: 2rem;
+    color: #8B0000;
+}
+
+.stat p {
+    margin: 0.5rem 0 0 0;
+    color: #333;
+}
+
+/* Testimonials */
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.testimonial-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border-left: 4px solid #FFD700;
+}
+
+.rating {
+    color: #FFD700;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.testimonial-card p {
+    font-style: italic;
+    margin-bottom: 1rem;
+    color: #555;
+}
+
+.testimonial-card cite {
+    font-weight: bold;
+    color: #8B0000;
+}
+
+/* Delivery Info */
+.delivery-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.delivery-feature {
+    text-align: center;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.delivery-feature h3 {
+    color: #8B0000;
+    margin-bottom: 1rem;
+}
+
+.delivery-feature p {
+    color: #666;
+    margin: 0;
+}
+
+/* Contact Section */
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.contact-info h3,
+.contact-form h3 {
+    color: #8B0000;
+    margin-bottom: 1rem;
+}
+
+.contact-info p {
+    margin: 0.5rem 0;
+    color: #555;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: inherit;
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* FAQ Section */
+.faq-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background: white;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.faq-item h4 {
+    background: linear-gradient(45deg, #FFD700, #FFA500);
+    color: #8B0000;
+    margin: 0;
+    padding: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.faq-item h4:hover {
+    background: linear-gradient(45deg, #FFA500, #FF8C00);
+}
+
+.faq-item p {
+    margin: 0;
+    padding: 1rem;
+    color: #555;
+    display: none;
+}
+
+.faq-item.active p {
+    display: block;
+}
+
+/* Footer Improvements */
+footer {
+    background: linear-gradient(90deg, #333, #FFD700);
+    color: white;
+    position: relative;
+    margin-top: 2rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-section h4 {
+    color: #FFD700;
+    margin-bottom: 1rem;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-section a:hover {
+    color: #FFD700;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.newsletter {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.newsletter input {
+    flex: 1;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 4px;
+}
+
+.footer-bottom {
+    background: rgba(0,0,0,0.2);
+    text-align: center;
+    padding: 1rem;
+    margin-top: 1rem;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 0.5rem 0;
+    }
+
+    .about-content,
+    .contact-content {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+
+    .newsletter {
+        flex-direction: column;
+    }
+}
+
+/* Loading States */
+.loading {
+    opacity: 0.6;
+    pointer-events: none;
+    position: relative;
+}
+
+.loading::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    border: 2px solid #FFD700;
+    border-top: 2px solid transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Search Bar */
+.search-container {
+    position: relative;
+    max-width: 400px;
+    margin: 1rem auto;
+}
+
+.search-input {
+    width: 100%;
+    padding: 0.75rem 2.5rem 0.75rem 1rem;
+    border: 2px solid #FFD700;
+    border-radius: 25px;
+    font-size: 1rem;
+    outline: none;
+}
+
+.search-btn {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #FFD700;
+    border: none;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-btn:hover {
+    background: #FFA500;
+}
+
+/* Category Filter */
+.category-filter {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.category-btn {
+    background: linear-gradient(45deg, #FFD700, #FFA500);
+    color: #8B0000;
+    border: 2px solid #FFD700;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.category-btn:hover,
+.category-btn.active {
+    background: linear-gradient(45deg, #FFA500, #FF8C00);
+    color: white;
+    transform: scale(1.05);
+}
+
+.category-btn.active {
+    border-color: #8B0000;
+}
