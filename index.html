@@ -23,6 +23,15 @@
             </ul>
         </nav>
     </header>
+
+    <!-- Search Bar -->
+    <div class="search-container">
+        <input type="text" class="search-input" placeholder="Search for snacks..." id="search-input">
+        <button class="search-btn" id="search-btn">🔍</button>
+    </div>
+
+    <main>
+    </header>
     <main>
         <section id="home">
             <h2>Welcome to Rasoiyaa Food</h2>
@@ -31,54 +40,306 @@
         </section>
         <section id="products">
             <h2>Our Popular Snacks</h2>
+
+            <!-- Product Categories -->
+            <div class="category-filter">
+                <button class="category-btn active" data-category="all">All Products</button>
+                <button class="category-btn" data-category="traditional">Traditional Snacks</button>
+                <button class="category-btn" data-category="khakra">Khakra Collection</button>
+                <button class="category-btn" data-category="masala">Masala Variants</button>
+                <button class="category-btn" data-category="plain">Plain Variants</button>
+            </div>
+
             <div class="product-grid">
-                <div class="product-card">
+                <!-- Traditional Snacks -->
+                <div class="product-card" data-category="traditional">
                     <img src="samosa.jpg" alt="Samosa" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px;">
                     <h3>Samosa</h3>
-                    <p>₹20</p>
+                    <p>₹25</p>
                     <p>Crispy fried pastry filled with spiced potatoes and peas.</p>
-                    <button class="add-to-cart" data-product="samosa" data-price="20">Add to Cart</button>
+                    <button class="add-to-cart" data-product="samosa" data-price="25">Add to Cart</button>
                 </div>
-                <div class="product-card">
-                    <img src="pakora.jpg" alt="Pakora" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px;">
-                    <h3>Pakora</h3>
-                    <p>₹15</p>
-                    <p>Deep-fried fritters made with chickpea flour and vegetables.</p>
-                    <button class="add-to-cart" data-product="pakora" data-price="15">Add to Cart</button>
-                </div>
-                <div class="product-card">
+                <div class="product-card" data-category="traditional">
                     <img src="kachori.jpg" alt="Kachori" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px;">
                     <h3>Kachori</h3>
-                    <p>₹25</p>
-                    <p>Spicy deep-fried snack filled with lentils and spices.</p>
-                    <button class="add-to-cart" data-product="kachori" data-price="25">Add to Cart</button>
+                    <p>₹30</p>
+                    <p>Spicy deep-fried snack filled with lentils and authentic spices.</p>
+                    <button class="add-to-cart" data-product="kachori" data-price="30">Add to Cart</button>
                 </div>
-                <div class="product-card">
+                <div class="product-card" data-category="traditional">
+                    <img src="pakora.jpg" alt="Pakora" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px;">
+                    <h3>Pakora</h3>
+                    <p>₹20</p>
+                    <p>Crispy fritters made with chickpea flour and fresh vegetables.</p>
+                    <button class="add-to-cart" data-product="pakora" data-price="20">Add to Cart</button>
+                </div>
+                <div class="product-card" data-category="traditional">
                     <img src="mathri.jpg" alt="Mathri" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px;">
                     <h3>Mathri</h3>
-                    <p>₹30</p>
-                    <p>Flaky, crispy crackers perfect with tea or pickle.</p>
-                    <button class="add-to-cart" data-product="mathri" data-price="30">Add to Cart</button>
+                    <p>₹35</p>
+                    <p>Flaky, crispy crackers perfect with tea or traditional pickle.</p>
+                    <button class="add-to-cart" data-product="mathri" data-price="35">Add to Cart</button>
                 </div>
-                <div class="product-card">
+                <div class="product-card" data-category="traditional">
                     <img src="namakpare.jpg" alt="Namak Pare" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px;">
                     <h3>Namak Pare</h3>
-                    <p>₹18</p>
-                    <p>Savory crispy bites made with flour and spices.</p>
-                    <button class="add-to-cart" data-product="namakpare" data-price="18">Add to Cart</button>
+                    <p>₹22</p>
+                    <p>Savory crispy bites made with flour and authentic spices.</p>
+                    <button class="add-to-cart" data-product="namakpare" data-price="22">Add to Cart</button>
                 </div>
-                <div class="product-card">
+                <div class="product-card" data-category="traditional">
                     <img src="bhujia.jpg" alt="Bhujia" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px;">
                     <h3>Bhujia</h3>
+                    <p>₹45</p>
+                    <p>Crispy noodles made from chickpea flour and premium spices.</p>
+                    <button class="add-to-cart" data-product="bhujia" data-price="45">Add to Cart</button>
+                </div>
+                <div class="product-card" data-category="traditional">
+                    <img src="murmura.jpg" alt="Masala Murmura" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px;">
+                    <h3>Masala Murmura</h3>
+                    <p>₹60</p>
+                    <p>Crispy puffed rice snack with authentic masala spices.</p>
+                    <button class="add-to-cart" data-product="masala-murmura" data-price="60">Add to Cart</button>
+                </div>
+                <div class="product-card" data-category="traditional">
+                    <img src="golden-crunch.jpg" alt="Golden Crunch (Saloni)" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px;">
+                    <h3>Golden Crunch (Saloni)</h3>
+                    <p>₹130</p>
+                    <p>Premium crunchy snack with golden texture and rich flavors.</p>
+                    <button class="add-to-cart" data-product="golden-crunch-saloni" data-price="130">Add to Cart</button>
+                </div>
+                <div class="product-card" data-category="traditional">
+                    <img src="coco-kaju-delight.jpg" alt="Coco-Kaju Delight (Chivda)" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px;">
+                    <h3>Coco-Kaju Delight (Chivda)</h3>
+                    <p>₹110</p>
+                    <p>Delicious chivda mix with coconut and cashews for a delightful taste.</p>
+                    <button class="add-to-cart" data-product="coco-kaju-delight-chivda" data-price="110">Add to Cart</button>
+                </div>
+
+                <!-- Khakra Collection -->
+                <div class="product-card" data-category="khakra masala">
+                    <img src="khakra.jpg" alt="Khakra Masala" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px;">
+                    <h3>Khakra Masala</h3>
                     <p>₹40</p>
-                    <p>Crispy noodles made from chickpea flour and spices.</p>
-                    <button class="add-to-cart" data-product="bhujia" data-price="40">Add to Cart</button>
+                    <p>Traditional Gujarati snack with authentic masala spices.</p>
+                    <button class="add-to-cart" data-product="khakra-masala" data-price="40">Add to Cart</button>
+                </div>
+                <div class="product-card" data-category="khakra masala">
+                    <img src="khakra.jpg" alt="Khakra Methi" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px;">
+                    <h3>Khakra Methi</h3>
+                    <p>₹42</p>
+                    <p>Flavored with fenugreek leaves for authentic taste.</p>
+                    <button class="add-to-cart" data-product="khakra-methi" data-price="42">Add to Cart</button>
+                </div>
+                <div class="product-card" data-category="khakra masala">
+                    <img src="khakra.jpg" alt="Khakra Jeera" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px;">
+                    <h3>Khakra Jeera</h3>
+                    <p>₹38</p>
+                    <p>Cumin flavored crispy khakra with traditional spices.</p>
+                    <button class="add-to-cart" data-product="khakra-jeera" data-price="38">Add to Cart</button>
+                </div>
+                <div class="product-card" data-category="khakra masala">
+                    <img src="khakra.jpg" alt="Khakra Punjabi Tadka" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px;">
+                    <h3>Khakra Punjabi Tadka</h3>
+                    <p>₹45</p>
+                    <p>Spicy Punjabi style khakra with authentic tadka.</p>
+                    <button class="add-to-cart" data-product="khakra-punjabi-tadka" data-price="45">Add to Cart</button>
+                </div>
+                <div class="product-card" data-category="khakra masala">
+                    <img src="khakra.jpg" alt="Khakra Pizza Tadka" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px;">
+                    <h3>Khakra Pizza Tadka</h3>
+                    <p>₹48</p>
+                    <p>Modern twist with pizza flavors on traditional khakra.</p>
+                    <button class="add-to-cart" data-product="khakra-pizza-tadka" data-price="48">Add to Cart</button>
+                </div>
+                <div class="product-card" data-category="khakra masala">
+                    <img src="khakra.jpg" alt="Khakra Peri Peri" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px;">
+                    <h3>Khakra Peri Peri</h3>
+                    <p>₹46</p>
+                    <p>Spicy peri peri flavored khakra for spice lovers.</p>
+                    <button class="add-to-cart" data-product="khakra-peri-peri" data-price="46">Add to Cart</button>
+                </div>
+
+                <!-- Plain Variants -->
+                <div class="product-card" data-category="plain">
+                    <img src="khakra.jpg" alt="Khakra Plain" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px;">
+                    <h3>Khakra Plain</h3>
+                    <p>₹35</p>
+                    <p>Classic plain khakra with authentic Gujarati taste.</p>
+                    <button class="add-to-cart" data-product="khakra-plain" data-price="35">Add to Cart</button>
+                </div>
+                <div class="product-card" data-category="plain">
+                    <img src="khakra.jpg" alt="Khakra Cream Onion" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px;">
+                    <h3>Khakra Cream Onion</h3>
+                    <p>₹44</p>
+                    <p>Creamy onion flavored khakra with rich taste.</p>
+                    <button class="add-to-cart" data-product="khakra-cream-onion" data-price="44">Add to Cart</button>
+                </div>
+                <div class="product-card" data-category="plain">
+                    <img src="khakra.jpg" alt="Khakra Tomato" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px;">
+                    <h3>Khakra Tomato</h3>
+                    <p>₹42</p>
+                    <p>Fresh tomato flavored khakra with tangy taste.</p>
+                    <button class="add-to-cart" data-product="khakra-tomato" data-price="42">Add to Cart</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="about">
+            <h2>About Rasoiyaa Food</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Authentic Indian Snacks</h3>
+                    <p>Rasoiyaa Food brings you the finest traditional Indian snacks made with love and authentic recipes passed down through generations. Our snacks are prepared fresh daily using premium ingredients and traditional cooking methods.</p>
+
+                    <h3>Why Choose Us?</h3>
+                    <ul>
+                        <li>✅ Fresh, hygienic preparation</li>
+                        <li>✅ Authentic traditional recipes</li>
+                        <li>✅ Premium quality ingredients</li>
+                        <li>✅ Fast delivery service</li>
+                        <li>✅ Customer satisfaction guarantee</li>
+                    </ul>
+                </div>
+                <div class="about-stats">
+                    <div class="stat">
+                        <h4>500+</h4>
+                        <p>Happy Customers</p>
+                    </div>
+                    <div class="stat">
+                        <h4>50+</h4>
+                        <p>Traditional Recipes</p>
+                    </div>
+                    <div class="stat">
+                        <h4>24/7</h4>
+                        <p>Customer Support</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials">
+            <h2>What Our Customers Say</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="rating">⭐⭐⭐⭐⭐</div>
+                    <p>"Amazing quality samosas! Fresh and crispy. Will definitely order again."</p>
+                    <cite>- Priya Sharma</cite>
+                </div>
+                <div class="testimonial-card">
+                    <div class="rating">⭐⭐⭐⭐⭐</div>
+                    <p>"The bhujia is absolutely delicious. Perfect spice level and packaging."</p>
+                    <cite>- Rajesh Kumar</cite>
+                </div>
+                <div class="testimonial-card">
+                    <div class="rating">⭐⭐⭐⭐⭐</div>
+                    <p>"Great service and authentic taste. My family loves their snacks!"</p>
+                    <cite>- Meera Patel</cite>
+                </div>
+            </div>
+        </section>
+
+        <section id="delivery">
+            <h2>Fast & Reliable Delivery</h2>
+            <div class="delivery-info">
+                <div class="delivery-feature">
+                    <h3>🚚 Express Delivery</h3>
+                    <p>Same-day delivery for orders placed before 2 PM</p>
+                </div>
+                <div class="delivery-feature">
+                    <h3>📦 Secure Packaging</h3>
+                    <p>Freshness guaranteed with special packaging</p>
+                </div>
+                <div class="delivery-feature">
+                    <h3>💰 Cash on Delivery</h3>
+                    <p>Pay when you receive your order</p>
+                </div>
+                <div class="delivery-feature">
+                    <h3>🔄 Easy Returns</h3>
+                    <p>30-day return policy for damaged items</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Get in Touch</h3>
+                    <p>📧 Email: info@rasoiyafood.com</p>
+                    <p>📱 Phone: +91 98765 43210</p>
+                    <p>📍 Address: 123 Food Street, Delhi, India</p>
+                    <p>🕒 Hours: Mon-Sun 9 AM - 9 PM</p>
+                </div>
+                <div class="contact-form">
+                    <h3>Send us a Message</h3>
+                    <form id="contact-form">
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="email" placeholder="Your Email" required>
+                        <textarea placeholder="Your Message" rows="4" required></textarea>
+                        <button type="submit">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-content">
+                <div class="faq-item">
+                    <h4>How fresh are your products?</h4>
+                    <p>All our snacks are prepared fresh daily using traditional methods and premium ingredients.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Do you offer delivery?</h4>
+                    <p>Yes! We offer same-day delivery for orders placed before 2 PM in Delhi-NCR area.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Can I return products?</h4>
+                    <p>We accept returns within 30 days for damaged or unsatisfactory products.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Are your snacks vegetarian?</h4>
+                    <p>Yes, all our products are 100% vegetarian and made with love!</p>
                 </div>
             </div>
         </section>
     </main>
+
     <footer>
-        <p>&copy; 2023 Rasoiyaa. All rights reserved.</p>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Rasoiyaa Food</h4>
+                <p>Authentic Indian snacks delivered fresh to your doorstep.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="#">📘 Facebook</a>
+                    <a href="#">📷 Instagram</a>
+                    <a href="#">🐦 Twitter</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Newsletter</h4>
+                <div class="newsletter">
+                    <input type="email" placeholder="Your email" id="newsletter-email">
+                    <button id="newsletter-btn">Subscribe</button>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Rasoiyaa Food. All rights reserved.</p>
+        </div>
     </footer>
 
     <!-- Login Modal -->
@@ -87,7 +348,11 @@
             <span class="close">&times;</span>
             <h2>Login to Rasoiyaa Food</h2>
             <div id="login-step-1">
-                <input type="email" id="login-email" placeholder="Enter your email" required>
+                <select id="contact-type">
+                    <option value="email">Email</option>
+                    <option value="phone">Phone (SMS)</option>
+                </select>
+                <input type="text" id="login-contact" placeholder="Enter your email or phone" required>
                 <button id="send-otp-btn">Send OTP</button>
             </div>
             <div id="login-step-2" style="display: none;">
