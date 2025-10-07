@@ -1,0 +1,201 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #FFD700, #FF6347, #FFA500); /* Diwali colors: gold, red, orange */
+    background-attachment: fixed;
+    color: #333;
+    animation: diwaliGlow 5s ease-in-out infinite alternate;
+}
+
+@keyframes diwaliGlow {
+    0% { background: linear-gradient(135deg, #FFD700, #FF6347, #FFA500); }
+    100% { background: linear-gradient(135deg, #FFFF00, #DC143C, #FF4500); }
+}
+
+header {
+    background: linear-gradient(90deg, #FFD700, #FF6347); /* Gold to red */
+    color: white;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    border-bottom: 3px solid #FFA500;
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo-section h1 {
+    margin: 0;
+    font-size: 1.8rem;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 1rem;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #FFFF00; /* Yellow on hover */
+}
+
+main {
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.9);
+    margin: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+section {
+    margin-bottom: 2rem;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.product-card {
+    background: linear-gradient(45deg, #FFD700, #FFA500);
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: transform 0.3s;
+    text-align: center;
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+}
+
+.product-card h3 {
+    color: #8B0000; /* Dark red */
+}
+
+.product-card p {
+    margin: 0.5rem 0;
+}
+
+.add-to-cart {
+    margin-top: 0.5rem;
+}
+
+button {
+    background: linear-gradient(45deg, #FF6347, #DC143C);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: linear-gradient(45deg, #DC143C, #B22222);
+}
+
+footer {
+    background: linear-gradient(90deg, #333, #FFD700);
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    box-shadow: 0 -4px 8px rgba(0,0,0,0.3);
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 90%;
+    max-width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: black;
+}
+
+.modal h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #8B0000;
+}
+
+.modal input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.modal button {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    background: linear-gradient(45deg, #FF6347, #DC143C);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.modal button:hover {
+    background: linear-gradient(45deg, #DC143C, #B22222);
+}
+
+#resend-otp-btn {
+    background: linear-gradient(45deg, #FFD700, #FFA500);
+    color: #333;
+}
+
+#resend-otp-btn:hover {
+    background: linear-gradient(45deg, #FFA500, #FF8C00);
+}
