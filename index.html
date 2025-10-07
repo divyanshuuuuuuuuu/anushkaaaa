@@ -3,353 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday Shalini! 🎉</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Georgia', serif;
-            background: linear-gradient(135deg, #ff6b9d 0%, #c06c84 25%, #ffa07a 50%, #ffb6c1 75%, #ff69b4 100%);
-            min-height: 100vh;
-            overflow-x: hidden;
-            position: relative;
-        }
-
-        /* Animated background elements */
-        .confetti {
-            position: fixed;
-            width: 10px;
-            height: 10px;
-            background: #ffd700;
-            position: absolute;
-            animation: confetti-fall 3s linear infinite;
-        }
-
-        @keyframes confetti-fall {
-            to {
-                transform: translateY(100vh) rotate(360deg);
-                opacity: 0;
-            }
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .header {
-            text-align: center;
-            padding: 40px 20px;
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 30px;
-            margin-bottom: 30px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            animation: slideDown 1s ease-out;
-        }
-
-        @keyframes slideDown {
-            from {
-                transform: translateY(-100px);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-        h1 {
-            font-size: 3.5em;
-            color: #ff1493;
-            margin-bottom: 15px;
-            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
-            animation: bounce 2s infinite;
-        }
-
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
-        }
-
-        .subtitle {
-            font-size: 1.5em;
-            color: #c06c84;
-            font-style: italic;
-            margin: 10px 0;
-        }
-
-        .date {
-            font-size: 1.8em;
-            color: #ff69b4;
-            font-weight: bold;
-            margin-top: 15px;
-            padding: 10px 30px;
-            background: linear-gradient(45deg, #ffd700, #ffb6c1);
-            border-radius: 50px;
-            display: inline-block;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .message-box {
-            background: rgba(255, 255, 255, 0.95);
-            padding: 40px;
-            border-radius: 25px;
-            margin-bottom: 30px;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
-            animation: fadeIn 1.5s ease-in;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        .message-box h2 {
-            color: #ff1493;
-            font-size: 2.2em;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
-        .message-box p {
-            font-size: 1.3em;
-            line-height: 1.8;
-            color: #555;
-            text-align: center;
-        }
-
-        .photo-gallery {
-            background: rgba(255, 255, 255, 0.95);
-            padding: 40px;
-            border-radius: 25px;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
-        }
-
-        .photo-gallery h2 {
-            color: #ff1493;
-            font-size: 2.5em;
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .photo-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-        }
-
-        .photo-card {
-            position: relative;
-            overflow: hidden;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            background: white;
-            animation: popIn 0.6s ease-out backwards;
-        }
-
-        .photo-card:nth-child(1) { animation-delay: 0.1s; }
-        .photo-card:nth-child(2) { animation-delay: 0.2s; }
-        .photo-card:nth-child(3) { animation-delay: 0.3s; }
-        .photo-card:nth-child(4) { animation-delay: 0.4s; }
-        .photo-card:nth-child(5) { animation-delay: 0.5s; }
-        .photo-card:nth-child(6) { animation-delay: 0.6s; }
-
-        @keyframes popIn {
-            from {
-                transform: scale(0.5);
-                opacity: 0;
-            }
-            to {
-                transform: scale(1);
-                opacity: 1;
-            }
-        }
-
-        .photo-card:hover {
-            transform: scale(1.05) rotate(2deg);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
-        }
-
-        .photo-card img {
-            width: 100%;
-            height: 400px;
-            object-fit: cover;
-            display: block;
-        }
-
-        .photo-caption {
-            padding: 20px;
-            background: linear-gradient(to bottom, rgba(255, 255, 255, 0.9), rgba(255, 182, 193, 0.3));
-            text-align: center;
-        }
-
-        .photo-caption p {
-            color: #c06c84;
-            font-size: 1.1em;
-            font-style: italic;
-            margin: 0;
-        }
-
-        .emoji {
-            display: inline-block;
-            animation: rotate 2s infinite;
-        }
-
-        @keyframes rotate {
-            0%, 100% { transform: rotate(0deg); }
-            25% { transform: rotate(-10deg); }
-            75% { transform: rotate(10deg); }
-        }
-
-        .footer {
-            text-align: center;
-            padding: 40px 20px;
-            margin-top: 30px;
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 25px;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
-        }
-
-        .footer p {
-            font-size: 1.4em;
-            color: #ff1493;
-            font-weight: bold;
-        }
-
-        /* Sparkle effect */
-        .sparkle {
-            position: fixed;
-            pointer-events: none;
-            animation: sparkle 1s ease-out forwards;
-        }
-
-        @keyframes sparkle {
-            0% {
-                transform: scale(0) rotate(0deg);
-                opacity: 1;
-            }
-            100% {
-                transform: scale(1.5) rotate(180deg);
-                opacity: 0;
-            }
-        }
-
-        @media (max-width: 768px) {
-            h1 { font-size: 2.5em; }
-            .subtitle { font-size: 1.2em; }
-            .date { font-size: 1.4em; }
-            .photo-card img { height: 300px; }
-        }
-    </style>
+    <title>Rasoiyaa - Your Kitchen Companion</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>🎉 Happy Birthday Shalini! 🎂</h1>
-            <p class="subtitle">Wishing you a day as beautiful as you are! ✨</p>
-            <div class="date">October 1st, 2025 <span class="emoji">🎈</span></div>
+    <header>
+        <div class="logo-section">
+            <img src="logo.jpg" alt="Rasoiyaa Logo" style="width: 100px; height: auto;">
+            <h1>Rasoiyaa Food</h1>
         </div>
-
-        <div class="message-box">
-            <h2>💖 A Special Day for a Special Person 💖</h2>
-            <p>
-                Dear Shalini,<br><br>
-                On this wonderful day, we celebrate not just your birthday, but the joy and happiness you bring into our family. 
-                Your beautiful smile and kind heart make every moment special. These cherished memories from your wedding day 
-                remind us of the love and happiness that began a new chapter in our family. 
-                May this year bring you endless joy, success, and all the happiness your heart can hold! 🌟<br><br>
-                With lots of love and warm wishes! 💝
-            </p>
-        </div>
-
-        <div class="photo-gallery">
-            <h2>💕 Beautiful Memories 💕</h2>
-            <div class="photo-grid">
-                <div class="photo-card">
-                    <img src="https://i.ibb.co/tNJq2pN/IMG-20250930-WA0049.jpg" alt="Beautiful Memory 1">
-                    <div class="photo-caption">
-                        <p>The Beginning of Forever ✨</p>
-                    </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#" id="login-btn">Login</a></li>
+                <li><a href="#" id="cart-btn">Cart (0)</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="home">
+            <h2>Welcome to Rasoiyaa Food</h2>
+            <p>Discover delicious snacks and traditional Indian treats. Fresh, authentic, and delivered to your doorstep.</p>
+            <button id="explore-btn">Explore Products</button>
+        </section>
+        <section id="products">
+            <h2>Our Popular Snacks</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <img src="samosa.jpg" alt="Samosa" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px;">
+                    <h3>Samosa</h3>
+                    <p>₹20</p>
+                    <p>Crispy fried pastry filled with spiced potatoes and peas.</p>
+                    <button class="add-to-cart" data-product="samosa" data-price="20">Add to Cart</button>
                 </div>
-                <div class="photo-card">
-                    <img src="https://i.ibb.co/VphYHQmN/IMG-20250930-WA0048.jpg" alt="Beautiful Memory 2">
-                    <div class="photo-caption">
-                        <p>Sparkling Celebrations 🎆</p>
-                    </div>
+                <div class="product-card">
+                    <img src="pakora.jpg" alt="Pakora" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px;">
+                    <h3>Pakora</h3>
+                    <p>₹15</p>
+                    <p>Deep-fried fritters made with chickpea flour and vegetables.</p>
+                    <button class="add-to-cart" data-product="pakora" data-price="15">Add to Cart</button>
                 </div>
-                <div class="photo-card">
-                    <img src="https://i.ibb.co/q3wVDvYh/IMG-20250930-WA0047.jpg" alt="Beautiful Memory 3">
-                    <div class="photo-caption">
-                        <p>Magical Moments Together 💫</p>
-                    </div>
+                <div class="product-card">
+                    <img src="kachori.jpg" alt="Kachori" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px;">
+                    <h3>Kachori</h3>
+                    <p>₹25</p>
+                    <p>Spicy deep-fried snack filled with lentils and spices.</p>
+                    <button class="add-to-cart" data-product="kachori" data-price="25">Add to Cart</button>
                 </div>
-                <div class="photo-card">
-                    <img src="https://i.ibb.co/fd4XtdKv/IMG-20250930-WA0044.jpg" alt="Beautiful Memory 4">
-                    <div class="photo-caption">
-                        <p>Celebration of Love 💑</p>
-                    </div>
+                <div class="product-card">
+                    <img src="mathri.jpg" alt="Mathri" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px;">
+                    <h3>Mathri</h3>
+                    <p>₹30</p>
+                    <p>Flaky, crispy crackers perfect with tea or pickle.</p>
+                    <button class="add-to-cart" data-product="mathri" data-price="30">Add to Cart</button>
                 </div>
-                <div class="photo-card">
-                    <img src="https://i.ibb.co/S7P87Sgh/IMG-20250930-WA0043.jpg" alt="Beautiful Memory 5">
-                    <div class="photo-caption">
-                        <p>Radiant & Beautiful 🌹</p>
-                    </div>
+                <div class="product-card">
+                    <img src="namakpare.jpg" alt="Namak Pare" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px;">
+                    <h3>Namak Pare</h3>
+                    <p>₹18</p>
+                    <p>Savory crispy bites made with flour and spices.</p>
+                    <button class="add-to-cart" data-product="namakpare" data-price="18">Add to Cart</button>
                 </div>
-                <div class="photo-card">
-                    <img src="https://i.ibb.co/7tcHHHSX/IMG-20250930-WA0032.jpg" alt="Beautiful Memory 6">
-                    <div class="photo-caption">
-                        <p>Showered with Blessings 🎊</p>
-                    </div>
+                <div class="product-card">
+                    <img src="bhujia.jpg" alt="Bhujia" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px;">
+                    <h3>Bhujia</h3>
+                    <p>₹40</p>
+                    <p>Crispy noodles made from chickpea flour and spices.</p>
+                    <button class="add-to-cart" data-product="bhujia" data-price="40">Add to Cart</button>
                 </div>
             </div>
-        </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 Rasoiyaa. All rights reserved.</p>
+    </footer>
 
-        <div class="footer">
-            <p>🎁 Have the most amazing birthday, Shalini! 🎁</p>
-            <p style="margin-top: 15px; font-size: 1.2em;">May all your dreams come true! 🌈⭐</p>
+    <!-- Login Modal -->
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Login to Rasoiyaa Food</h2>
+            <div id="login-step-1">
+                <input type="email" id="login-email" placeholder="Enter your email" required>
+                <button id="send-otp-btn">Send OTP</button>
+            </div>
+            <div id="login-step-2" style="display: none;">
+                <p>OTP sent to <span id="otp-email"></span></p>
+                <input type="text" id="login-otp" placeholder="Enter 6-digit OTP" maxlength="6" required>
+                <button id="verify-otp-btn">Verify OTP</button>
+                <button id="resend-otp-btn">Resend OTP</button>
+            </div>
+            <div id="login-success" style="display: none;">
+                <p>Login successful! Welcome to Rasoiyaa Food.</p>
+            </div>
         </div>
     </div>
 
-    <script>
-        // Create confetti
-        function createConfetti() {
-            const confetti = document.createElement('div');
-            confetti.classList.add('confetti');
-            confetti.style.left = Math.random() * 100 + '%';
-            confetti.style.background = ['#ff69b4', '#ffd700', '#ff6b9d', '#87ceeb', '#98fb98'][Math.floor(Math.random() * 5)];
-            confetti.style.animationDelay = Math.random() * 3 + 's';
-            confetti.style.animationDuration = (Math.random() * 3 + 2) + 's';
-            document.body.appendChild(confetti);
-            
-            setTimeout(() => confetti.remove(), 5000);
-        }
-
-        setInterval(createConfetti, 200);
-
-        // Sparkle effect on mouse move
-        document.addEventListener('mousemove', (e) => {
-            if (Math.random() > 0.9) {
-                const sparkle = document.createElement('div');
-                sparkle.classList.add('sparkle');
-                sparkle.style.left = e.clientX + 'px';
-                sparkle.style.top = e.clientY + 'px';
-                sparkle.style.width = '20px';
-                sparkle.style.height = '20px';
-                sparkle.innerHTML = '✨';
-                sparkle.style.fontSize = '20px';
-                document.body.appendChild(sparkle);
-                
-                setTimeout(() => sparkle.remove(), 1000);
-            }
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
